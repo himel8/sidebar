@@ -129,14 +129,22 @@ const SceneSettings = ({ ismobile }) => {
               {activeBg === "Linear Gradient" ||
               activeBg === "Radial Gradient" ? (
                 <Box sx={{ display: "flex" }}>
-                  <Colors colors={{ color: "#fff" }} top={190} left={35} />
-                  <Colors colors={{ color: "#222" }} top={190} left={35} />
+                  <Colors
+                    colors={{ color: "#fff" }}
+                    top={190}
+                    left={ismobile ? 35 : 50}
+                  />
+                  <Colors
+                    colors={{ color: "#222" }}
+                    top={190}
+                    left={ismobile ? 35 : 50}
+                  />
                 </Box>
               ) : (
                 <Colors
                   colors={{ color: "#fff" }}
                   top={190}
-                  left={ismobile ? 35 : 100}
+                  left={ismobile ? 35 : 50}
                 />
               )}
             </Box>
