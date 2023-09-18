@@ -37,7 +37,8 @@ const ButtonTitle = styled.p`
 `;
 const CloseButton = styled.div`
   position: absolute;
-  top: 25px;
+  top: 35px;
+  transform: translate(-50%, -50%);
   right: 0;
   font-size: 25px;
   color: rgb(74, 85, 104);

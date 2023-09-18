@@ -59,6 +59,7 @@ const Type = () => {
 
   const handleClick = (item) => {
     setActiveType(item);
+    setOpen(false);
   };
 
   const handleCloseColorPicker = () => {

@@ -41,6 +41,7 @@ const Background = ({ activeBg, setActiveBg, bgList }) => {
 
   const handleClick = (item) => {
     setActiveBg(item.name);
+    setOpen(false);
   };
 
   const handleCloseColorPicker = () => {
