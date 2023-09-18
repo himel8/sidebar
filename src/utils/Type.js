@@ -13,7 +13,7 @@ import Warehouse from "../assets/type/warehouse.jpg";
 const SelectModel = styled.div`
   position: absolute;
   width: 70%;
-  top: 160px;
+  top: 183px;
   left: 0;
   z-index: 100;
   background: #fff;
@@ -21,6 +21,23 @@ const SelectModel = styled.div`
   padding: 5px;
   border-radius: 10px;
   transform: translate(45%, -50%);
+`;
+const ItemSelectBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fbfbfe;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(74, 85, 104);
+  padding: 5px 8px 5px 0px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #e5e7eb;
+  }
 `;
 
 const typeList = [
@@ -74,24 +91,13 @@ const Type = () => {
   }, [open]);
   return (
     <>
-      <Box
-        onClick={() => setOpen(!open)}
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "100%",
-          backgroundColor: "#f7f7f7",
-          borderRadius: "10px",
-          cursor: "pointer",
-        }}
-      >
-        <Box sx={{ display: "flex", gap: "8px", paddingLeft: "10px" }}>
+      <ItemSelectBox onClick={() => setOpen(!open)}>
+        <Box sx={{ display: "flex", gap: "8px", alignItems: "center" }}>
           <img src={activeType.img} alt="" width={30} />
-          <Typography sx={{ fontSize: "12px" }}>{activeType.name}</Typography>
+          <Typography sx={{ fontSize: "14px" }}>{activeType.name}</Typography>
         </Box>
         <BiChevronDown />
-      </Box>
+      </ItemSelectBox>
       {open && (
         <SelectModel ref={colorPickerRef}>
           {typeList?.map((item, index) => (

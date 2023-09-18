@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import styled from "styled-components";
@@ -14,6 +14,23 @@ const SelectModel = styled.div`
   padding: 15px;
   border-radius: 15px;
   transform: translate(45%, -50%);
+`;
+const ItemSelectBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fbfbfe;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(74, 85, 104);
+  padding: 5px 8px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #e5e7eb;
+  }
 `;
 
 const Background = ({ activeBg, setActiveBg, bgList }) => {
@@ -56,20 +73,10 @@ const Background = ({ activeBg, setActiveBg, bgList }) => {
   }, [open]);
   return (
     <>
-      <Box
-        onClick={() => setOpen(!open)}
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "100%",
-          backgroundColor: "#f7f7f7",
-          cursor: "pointer",
-        }}
-      >
-        <Typography sx={{ fontSize: "12px" }}>{activeBg}</Typography>
+      <ItemSelectBox onClick={() => setOpen(!open)}>
+        <Typography sx={{ fontSize: "14px" }}>{activeBg}</Typography>
         <BiChevronDown />
-      </Box>
+      </ItemSelectBox>
       {open && (
         <SelectModel ref={colorPickerRef}>
           {bgList?.map((item, index) => (

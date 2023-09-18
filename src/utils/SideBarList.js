@@ -37,7 +37,7 @@ const SideBarList = ({ ismobile }) => {
                 colors={item}
                 key={index}
                 top={200}
-                left={ismobile ? 40 : 80}
+                left={ismobile ? 40 : 40}
               />
             ))}
           </Box>

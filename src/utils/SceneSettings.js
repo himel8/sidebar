@@ -76,29 +76,19 @@ const bgList = [
   { name: "Wallpaper" },
 ];
 
-// const ColoredSwitch = withStyles({
-//   switchBase: {
-//     color: "#fff", // Set your desired color here
-//     "&$checked": {
-//       color: "#fff", // Set your desired checked color here
-//     },
-//     "&$checked": {
-//       color: "#222", // Set your desired track color here
-//     },
-//   },
-//   checked: {},
-//   track: {},
-// })(Switch);
-
 const ImgList = styled.img`
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 5px;
   cursor: pointer;
   object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const SceneSettings = ({ ismobile }) => {
@@ -163,7 +153,7 @@ const SceneSettings = ({ ismobile }) => {
           {activeBg === "Wallpaper" && (
             <Grid container spacing={2}>
               {imgList.map((item, index) => (
-                <Grid item xs={2} sm={4} md={1.33} key={index}>
+                <Grid item xs={1.33} sm={1.33} md={1.33} key={index}>
                   <ImgList src={item} alt="" />
                 </Grid>
               ))}
